@@ -1,0 +1,26 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "bun run --watch src/index.ts"
+  },
+  "dependencies": {
+    "elysia": "latest"
+  },
+  "devDependencies": {
+    "bun-types": "latest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Diary-SPO/diary-admin.git",
+    "directory": "apps/server"
+  },
+  "author": "scffs",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Diary-SPO/diary-admin/issues"
+  },
+  "homepage": "https://github.com/Diary-SPO/diary-admin#readme",
+  "module": "src/index.js"
+}
