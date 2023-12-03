@@ -1,8 +1,14 @@
 {
   "compilerOptions": {
     "extends": "../../tsconfig.base.json",
+    "baseUrl": ".",
     "moduleResolution": "nodenext",
     "module": "ES2022",
-    "types": ["bun-types"]
-  }
+    "types": ["bun-types"],
+    "paths": {
+      "@utils": ["src/utils"],
+      "@handlers": ["src/handlers"]
+    }
+  },
+  "include": ["src"]
 }
