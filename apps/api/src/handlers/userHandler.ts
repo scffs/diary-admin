@@ -1,7 +1,7 @@
 import { User } from '@prisma/client'
 import { getUserById, getAllUsers } from '../services/userService'
 import { ApiResponse, ContextWith } from '../types'
-import {} from 'shared'
+
 type Params = { id: string }
 
 export const getAllUsersHandler = async (): Promise<ApiResponse<User[]>> => {

@@ -1,4 +1,4 @@
-import { Elysia } from 'elysia'
+import Elysia from 'elysia'
 import { getAllUsersHandler, getUserByIdHandler } from '@handlers'
 import { handleErrors } from '@utils'
 import { schema } from './userSchema'

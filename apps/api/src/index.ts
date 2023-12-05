@@ -1,4 +1,4 @@
-import { Elysia } from 'elysia'
+import Elysia from 'elysia'
 import users from './routes/user/userRoutes'
 
 const app = new Elysia().use(users).listen(3000)
