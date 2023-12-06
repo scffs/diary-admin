@@ -14,8 +14,7 @@
   },
   "devDependencies": {
     "bun-types": "latest",
-    "prisma": "^5.6.0",
-    "shared": "workspace:*"
+    "prisma": "^5.6.0"
   },
   "repository": {
     "type": "git",

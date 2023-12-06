@@ -1,12 +1,13 @@
-import Elysia from 'elysia'
+import Elysia, { t } from 'elysia'
 import { getAllUsersHandler, getUserByIdHandler } from '@handlers'
 import { handleErrors } from '@utils'
-import { schema } from './userSchema'
+import { userByIdParams } from './userSchema'
 
 const app = new Elysia()
   .get('/user', getAllUsersHandler, { error: handleErrors })
-  .guard(schema, (app) =>
-    app.get('/user/:id', getUserByIdHandler, { error: handleErrors }),
-  )
+  .get('/user/:id', getUserByIdHandler, {
+    error: handleErrors,
+    params: t.Object(userByIdParams),
+  })
 
 export default app
