@@ -24,7 +24,7 @@ bun i
 bun run dev
 ```
 
-![img.png](img.png)
+![img.png](images/img.png)
 
 ### Для запуска БД (в докере!):
 
@@ -32,7 +32,7 @@ bun run dev
 bun run db:start
 ```
 
-![img_1.png](img_1.png)
+![img_1.png](images/img_1.png)
 
 ### Для запуска миграций:
 
@@ -40,6 +40,6 @@ bun run db:start
 bun run migrate
 ```
 
-![img_2.png](img_2.png)
+![img_2.png](images/img_2.png)
 
 #### API доступен по урлу http://localhost:3000/
