@@ -1,19 +1,45 @@
-# Elysia with Bun runtime
+# API
 
-## Getting Started
+# Установка
 
-To get started with this template, simply paste this command into your terminal:
+### Необходимо иметь на локальной машине:
+
+- bun
+- bunx (обычно скачивается вместе с bun)
+- Docker
+
+**Если вы сделали это еще в самом корне проекта, то отдельно делеть этого не надо**
+
+### Скачать зависимости:
 
 ```bash
-bun create elysia ./elysia-example
+bun i
 ```
 
-## Development
+# Разработка
 
-To start the development server run:
+### Для запуска сервера:
 
 ```bash
 bun run dev
 ```
 
-Open http://localhost:3000/ with your browser to see the result.
+![img.png](img.png)
+
+### Для запуска БД (в докере!):
+
+```bash
+bun run db:start
+```
+
+![img_1.png](img_1.png)
+
+### Для запуска миграций:
+
+```bash
+bun run migrate
+```
+
+![img_2.png](img_2.png)
+
+#### API доступен по урлу http://localhost:3000/
