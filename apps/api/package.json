@@ -1,15 +1,20 @@
 {
-  "name": "server",
+  "name": "api",
   "version": "1.0.0",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "bun run --watch src/index.ts"
+    "dev": "bun run --watch src/index.ts",
+    "db:start": "docker-compose up -d",
+    "migrate": "npx prisma migrate dev && npx prisma generate"
   },
   "dependencies": {
-    "elysia": "latest"
+    "@elysiajs/swagger": "^0.7.4",
+    "elysia": "latest",
+    "postgres": "^3.4.3"
   },
   "devDependencies": {
-    "bun-types": "latest"
+    "bun-types": "latest",
+    "prisma": "^5.6.0"
   },
   "repository": {
     "type": "git",
