@@ -6,6 +6,8 @@
   "scripts": {
     "dev": "bunx --bun vite",
     "build": "tsc && vite build",
+    "lint": "biome lint . --apply",
+    "format": "biome format . --write",
     "preview": "vite preview"
   },
   "dependencies": {

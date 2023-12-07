@@ -15,4 +15,5 @@ const AppProvider = () => {
 	)
 }
 
+// biome-ignore lint: It's OK
 render(<AppProvider />, document.getElementById('app')!)

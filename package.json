@@ -8,7 +8,7 @@
     "prepare": "husky install && bun format",
     "dev:api": "cd apps/api && bun dev",
     "dev:startDB": "cd apps/api && db:start",
-    "lint": "biome lint .",
+    "lint": "biome lint . --apply",
     "format": "biome format . --write",
     "checkAll": "biome check .",
     "build:web": "cd apps/web && bun run build",
