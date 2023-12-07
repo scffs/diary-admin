@@ -1,26 +1,26 @@
 import { User } from '@prisma/client'
-import { getUserById, getAllUsers } from '../services/userService'
+import { getAllUsers, getUserById } from '../services/userService'
 import { ApiResponse, ContextWith } from '../types'
 
 type Params = { id: string }
 
 export const getAllUsersHandler = async (): Promise<ApiResponse<User[]>> => {
-  const users = await getAllUsers()
+	const users = await getAllUsers()
 
-  return {
-    success: true,
-    data: users,
-  }
+	return {
+		success: true,
+		data: users
+	}
 }
 
 export const getUserByIdHandler = async ({
-  params,
+	params
 }: ContextWith<Params>): Promise<ApiResponse<User | null>> => {
-  const userId = parseInt(params.id, 10)
-  const user = await getUserById(userId)
+	const userId = parseInt(params.id, 10)
+	const user = await getUserById(userId)
 
-  return {
-    success: true,
-    data: user,
-  }
+	return {
+		success: true,
+		data: user
+	}
 }
