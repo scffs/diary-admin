@@ -5,7 +5,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "bun run --watch src/index.ts",
     "db:start": "docker-compose up -d",
-    "migrate": "npx prisma migrate dev && npx prisma generate"
+    "migrate": "npx prisma migrate dev && npx prisma generate",
+    "build": "bun build ./src/index.ts --outdir dist --minify --target bun --splitting",
+    "build:types": "tsc --noEmit"
   },
   "dependencies": {
     "@elysiajs/swagger": "^0.7.4",

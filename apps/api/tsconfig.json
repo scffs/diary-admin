@@ -1,14 +1,14 @@
 {
   "compilerOptions": {
-    "extends": "../../tsconfig.base.json",
     "baseUrl": ".",
     "moduleResolution": "nodenext",
-    "module": "ES2022",
+    "module": "NodeNext",
     "types": ["bun-types"],
     "paths": {
       "@utils": ["src/utils"],
       "@handlers": ["src/handlers"]
     }
   },
+  "extends": "../../tsconfig.base.json",
   "include": ["src"]
 }
