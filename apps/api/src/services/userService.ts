@@ -1,14 +1,15 @@
-import { PrismaClient, User as PrismaUser } from '@prisma/client'
+import { PrismaClient } from 'prisma/prisma-client/scripts/default-index'
+import { User } from 'shared'
 
 const db = new PrismaClient()
 
-export const getAllUsers = async (): Promise<PrismaUser[]> => {
+export const getAllUsers = async (): Promise<User[]> => {
 	return db.user.findMany()
 }
 
 export const getUserById = async (
 	userId: number
-): Promise<PrismaUser | null> => {
+): Promise<User | null> => {
 	return db.user.findUnique({
 		where: {
 			id: userId
