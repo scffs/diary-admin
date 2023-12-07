@@ -10,7 +10,11 @@
     "dev:startDB": "cd apps/api && db:start",
     "lint": "biome lint .",
     "format": "biome format . --write",
-    "checkAll": "biome check ."
+    "checkAll": "biome check .",
+    "build:web": "cd apps/web && bun run build",
+    "build:api": "cd apps/api && bun run build",
+    "build:api:types": "cd apps/api && bun run build:types",
+    "build:shared": "cd apps/shared && bun run build"
   },
   "workspaces": [
     "apps/*"

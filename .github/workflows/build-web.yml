@@ -1,0 +1,23 @@
+name: Build Web
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build-web:
+    runs-on: ubuntu-latest
+    needs: linting
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Install dependencies
+        run: bun i
+
+      - name: Web build
+        run: bun run build:web

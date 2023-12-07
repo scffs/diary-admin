@@ -1,7 +1,8 @@
 {
   "compilerOptions": {
-    "extends": "../../tsconfig.base.json",
     /* Visit https://aka.ms/tsconfig to read more about this file */
     "module": "commonjs"
-  }
+  },
+  "extends": "../../tsconfig.base.json",
+  "exclude": ["../../node_modules"]
 }
