@@ -9,10 +9,19 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "preact": "^10.19.2"
+    "preact": "^10.19.2",
+    "zustand": "^4.4.7",
+    "@vkontakte/icons": "^2.87.0",
+    "@vkontakte/vkui": "^5.10.0"
   },
   "devDependencies": {
     "@preact/preset-vite": "^2.7.0",
+    "@rollup/plugin-terser": "^0.4.4",
+    "@types/fs-extra": "^11.0.4",
+    "@types/glob": "^8.1.0",
+    "fs-extra": "^11.2.0",
+    "glob": "^10.3.10",
+    "path": "^0.12.7",
     "vite": "^5.0.4"
   },
   "repository": {
