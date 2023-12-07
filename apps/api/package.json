@@ -6,6 +6,8 @@
     "dev": "bun run --watch src/index.ts",
     "db:start": "docker-compose up -d",
     "migrate": "npx prisma migrate dev && npx prisma generate",
+    "lint": "biome lint . --apply",
+    "format": "biome format . --write",
     "build": "bun build ./src/index.ts --outdir dist --minify --target bun --splitting",
     "build:types": "tsc --noEmit"
   },
@@ -16,7 +18,8 @@
   },
   "devDependencies": {
     "bun-types": "latest",
-    "prisma": "^5.6.0"
+    "prisma": "^5.6.0",
+    "shared": "workspace:*"
   },
   "repository": {
     "type": "git",

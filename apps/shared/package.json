@@ -5,6 +5,8 @@
   "main": "index.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "biome lint . --apply",
+    "format": "biome format . --write",
     "build": "tsc --noEmit"
   },
   "repository": {
