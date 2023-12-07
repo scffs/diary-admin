@@ -24,7 +24,6 @@ jobs:
       - name: Install dependencies in API
         run: |
           cd apps/api
-          bun add @prisma/client
           bun i
 
       - name: API build
