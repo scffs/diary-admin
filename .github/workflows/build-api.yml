@@ -22,7 +22,9 @@ jobs:
         run: bun i
 
       - name: Install dependencies in API
-        run: cd apps/api && bun i
+        run: |
+          cd apps/api
+          bun i
 
       - name: API build
         run: bun run build:api
