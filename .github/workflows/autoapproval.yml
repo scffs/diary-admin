@@ -6,7 +6,7 @@ on:
     required_labels:
       - '[Merge] Ready'
     blacklisted_labels:
-      - ['[API] WIP', '[Shared] WIP', '[Web] WIP']
+      - wip
     
 permissions:
   contents: read
