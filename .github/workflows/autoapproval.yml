@@ -1,6 +1,9 @@
 name: Auto approve
 
-on: pull_request_target
+on:
+  push:
+    branches:
+      - '*'
 
 jobs:
   auto-approve:
@@ -9,10 +12,6 @@ jobs:
       pull-requests: write
     if: github.actor == 'scffs'
     steps:
-      - name: Debug Information
-        run: |
-          echo "GitHub Actor: ${{ github.actor }}"
-          echo "Current Branch: ${{ github.event.pull_request.head.ref }}"
       - uses: hmarr/auto-approve-action@v3
         with:
           review-message: "Auto approved automated PR"
