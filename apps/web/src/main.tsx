@@ -6,13 +6,13 @@ import { App } from './app.tsx'
 import '@vkontakte/vkui/dist/cssm/styles/themes.css'
 
 const AppProvider = () => {
-	return (
-		<ConfigProvider>
-			<AdaptivityProvider>
-				<App />
-			</AdaptivityProvider>
-		</ConfigProvider>
-	)
+  return (
+    <ConfigProvider>
+      <AdaptivityProvider>
+        <App />
+      </AdaptivityProvider>
+    </ConfigProvider>
+  )
 }
 
 // biome-ignore lint: It's OK
