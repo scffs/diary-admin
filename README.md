@@ -6,7 +6,6 @@
 
 [![CodeQL](https://github.com/Diary-SPO/diary-admin/actions/workflows/codeql.yml/badge.svg)](https://github.com/Diary-SPO/diary-admin/actions/workflows/codeql.yml)
 
-[![Auto approve](https://github.com/Diary-SPO/diary-admin/actions/workflows/autoapproval.yml/badge.svg)](https://github.com/Diary-SPO/diary-admin/actions/workflows/autoapproval.yml)
 # Diary Admin
 
 Админка для преподавателей
