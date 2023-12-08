@@ -7,16 +7,47 @@ custom:
       - 'chore'
       - 'little'
     labels:
-      - [Common]
-      
-  - location: body
+      - '[Common]'
+  - location: title
     keywords:
-      - 'hey'
+      - 'backend'
+      - 'server'
+      - 'api'
     labels:
-      - feature:new
-      - hey
-  - location: body
+      - API
+  - location: title
     keywords:
-      - 'hi'
+      - 'frontend'
+      - 'web'
+      - 'layout'
     labels:
-      - h
+      - Web
+  - location: title
+    keywords:
+      - 'BREAKING CHANGE'
+      - 'big'
+      - 'huge'
+    labels:
+      - '[Global]'
+  - location: title
+    keywords:
+      - 'shared'
+    labels:
+      - Shared
+  - location: title
+    keywords:
+      - 'docs'
+    labels:
+      - documentation
+  - location: title
+    keywords:
+      - 'deps'
+      - 'dependencies'
+    labels:
+      - dependencies
+  - location: title
+    keywords:
+      - 'question'
+      - '?'
+    labels:
+      - question
