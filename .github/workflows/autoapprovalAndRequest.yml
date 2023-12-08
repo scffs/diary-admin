@@ -9,6 +9,9 @@ jobs:
       - uses: ntsd/auto-request-changes-action@v2
         if: ${{ github.event.pull_request && failure() }}
       - uses: hmarr/auto-approve-action@v2
-        if: ${{ github.event.pull_request && success() }}
+        if:
+          ${{ github.event.pull_request && success() }} && 
+          github.actor == 'scffs' && 
+          contains(github.event.label.name, '[Merge] Ready')
         with:
           github-token: "${{ secrets.TOKEN }}"
