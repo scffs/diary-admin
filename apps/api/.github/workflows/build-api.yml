@@ -1,25 +1,31 @@
-name: Build Web
+name: Build API
 
-on:
-  push:
+on: 
+  push: 
     branches: [ "master" ]
-  pull_request:
+  pull_request: 
     branches: [ "master" ]
 
-jobs:
-  build-web:
+jobs: 
+  build-api: 
     runs-on: ubuntu-latest
-    steps:
+    steps: 
       - name: Checkout repository
         uses: actions/checkout@v2
 
       - name: Setup Bun
         uses: oven-sh/setup-bun@v1
-        with:
+        with: 
           bun-version: 1.0.11 # or "latest", "canary", <sha>
 
       - name: Install dependencies
         run: bun i
 
-      - name: Web build
-        run: bun run build:web
+      - name: Install dependencies in API
+        run: bun i
+
+      - name: API build
+        run: bun run build
+
+      - name: API build types
+        run: bun run build:types
