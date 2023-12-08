@@ -15,8 +15,3 @@ jobs:
 
       - name: Build API
         uses: ./apps/api/.github/actions/setup-build
-
-      - name: Build Web
-        uses: ./apps/web/.github/workflows
-        with:
-          path: build-web.yml

@@ -12,11 +12,14 @@ runs:
     - name: Install dependencies
       shell: bash
       run: bun i
+      working-directory: ./apps/api
 
     - name: API build
       shell: bash
       run: bun run build
+      working-directory: ./apps/api
 
     - name: API build types
       shell: bash
       run: bun run build:types
+      working-directory: ./apps/api
