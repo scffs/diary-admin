@@ -1,3 +1,4 @@
+[![Build Web](https://github.com/Diary-SPO/diary-admin/actions/workflows/build-web.yml/badge.svg)](https://github.com/Diary-SPO/diary-admin/actions/workflows/build-web.yml)
 # Web
 
 ### Запуск проекта
