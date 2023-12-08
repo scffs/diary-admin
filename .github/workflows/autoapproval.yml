@@ -3,6 +3,10 @@ on:
   pull_request:
     types:
       - labeled
+  workflow_run:
+    workflows: [Build API, Build Web, Linting, Build Shared, Auto request changes]
+    types:
+      - completed
 
 jobs:
   build:
@@ -11,10 +15,7 @@ jobs:
       pull-requests: write
     steps:
       - uses: hmarr/auto-approve-action@v3
-        if: >-
-          (!github.event.state == 'error' || !github.event.state == 'failure') &&
-          contains(github.event.label.name, '[Merge] Ready')
-          - uses: hmarr/auto-approve-action@v3
+        if: contains(github.event.label.name, '[Merge] Ready') && github.actor == 'scffs'
         with:
           github-token: ${{ secrets.TOKEN }}
           REVIEW_MESSAGE: "Auto approved automated PR"
