@@ -4,7 +4,7 @@ on:
   pull_request_review:
     types: [dismissed]
     required_labels:
-      - ready
+      - '[Merge] Ready'
     blacklisted_labels:
       - ['[API] WIP', '[Shared] WIP', '[Web] WIP']
     
