@@ -5,6 +5,8 @@ on:
     types: [dismissed]
     required_labels:
       - ready
+    blacklisted_labels:
+      - ['[API] WIP', '[Shared] WIP', '[Web] WIP']
     
 permissions:
   contents: read
