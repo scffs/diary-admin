@@ -1,3 +1,4 @@
+[![Build API](https://github.com/Diary-SPO/diary-admin/actions/workflows/build-api.yml/badge.svg)](https://github.com/Diary-SPO/diary-admin/actions/workflows/build-api.yml)
 # API
 
 # Установка
