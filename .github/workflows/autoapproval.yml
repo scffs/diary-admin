@@ -17,6 +17,6 @@ jobs:
     runs-on: ubuntu-latest
     name: Autoapproval
     steps:
-      - uses: dkhmelenko/autoapproval@1.0
+      - uses: dkhmelenko/autoapproval@v1.0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
