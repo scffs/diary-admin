@@ -1,25 +1,22 @@
+name: Auto Merge
+
 on:
   pull_request:
-    types: [opened, reopened, labeled, edited]
-  pull_request_review:
-    types: [dismissed]
-    required_labels:
-      - ready
-    apply_labels:
-      - merge
-    auto_merge_labels:
-      - auto-merge
-    
-permissions:
-  contents: read
-  pull-requests: write
-  
+    types:
+      - labeled
+
 jobs:
-  autoapproval:
+  auto_merge:
     runs-on: ubuntu-latest
-    name: Autoapproval
     steps:
-      
-      - uses: dkhmelenko/autoapproval@v1.0
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    - name: Check out the code
+      uses: actions/checkout@v2
+
+    - name: Auto merge if labeled "ready"
+      if: github.event_name == 'pull_request' && contains(github.event.pull_request.labels.*.name, 'ready')
+      run: |
+        # Add any additional checks you might need before merging
+        # For example, running tests, linting, etc.
+        
+        # Merge the pull request
+        gh pr merge --auto --merge --squash
