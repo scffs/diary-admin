@@ -11,7 +11,17 @@ jobs:
       pull-requests: write
     if: github.actor == 'scffs' && contains(github.event.label.name, '[Merge] Ready')
     steps:
-      - uses: hmarr/auto-approve-action@v3
-        with:
-          github-token: ${{ secrets.TOKEN }}
-          review-message: "Auto approved automated PR"
+      - name: Check status of other workflows
+        id: check_workflow
+        run: |
+          response=$(curl -sSL -H "Authorization: Bearer ${{ secrets.TOKEN }}" \
+            "https://api.github.com/repos/${{ github.repository }}/actions/runs?event=push")
+          echo "::set-output name=success::$(echo "$response" | jq -e '.workflow_runs | all(.conclusion == "success")')")
+      - name: Auto approve if all other workflows succeeded
+        if: steps.check_workflow.outputs.success == 'true'
+        run: |
+          echo "All other workflows succeeded. Approving the pull request."
+          hmarr/auto-approve-action@v3
+        env:
+          GITHUB_TOKEN: ${{ secrets.TOKEN }}
+          REVIEW_MESSAGE: "Auto approved automated PR"
