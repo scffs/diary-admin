@@ -5,13 +5,13 @@ description: Build API
 runs:
   using: 'composite'
   steps:
-    - uses: oven-sh/setup-bun@v1
-      with:
-        bun-version: 1.0.11 # or "latest", "canary", <sha>
-
     - name: Set working directory
       shell: bash
       run: cd apps/api
+
+    - uses: oven-sh/setup-bun@v1
+      with:
+        bun-version: 1.0.11 # or "latest", "canary", <sha>
 
     - name: Install dependencies
       shell: bash
