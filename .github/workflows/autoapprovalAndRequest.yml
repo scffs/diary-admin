@@ -1,0 +1,14 @@
+name: Auto request changes and approve
+
+on: pull_request_target
+
+jobs:
+  auto-review:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: ntsd/auto-request-changes-action@v2
+        if: ${{ github.event.pull_request && failure() }}
+      - uses: hmarr/auto-approve-action@v2
+        if: ${{ github.event.pull_request && success() }}
+        with:
+          github-token: "${{ secrets.TOKEN }}"
