@@ -14,7 +14,11 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Build API
-        uses: ./apps/api/.github/workflows/build-api.yml
+        uses: ./apps/api/.github/workflows
+        with:
+          path: build-api.yml
 
       - name: Build Web
-        uses: ./apps/web/.github/workflows/build-web.yml
+        uses: ./apps/web/.github/workflows
+        with:
+          path: build-web.yml
