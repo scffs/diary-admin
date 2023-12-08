@@ -3,6 +3,8 @@ on:
     types: [opened, reopened, labeled, edited]
   pull_request_review:
     types: [dismissed]
+    required_labels:
+      - ready
     
 permissions:
   contents: read
