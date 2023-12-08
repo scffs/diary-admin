@@ -1,0 +1,53 @@
+numLabels: 40
+excludeLabels:
+  - pinned
+custom:
+  - location: title
+    keywords:
+      - 'chore'
+      - 'little'
+    labels:
+      - '[Common]'
+  - location: title
+    keywords:
+      - 'backend'
+      - 'server'
+      - 'api'
+    labels:
+      - API
+  - location: title
+    keywords:
+      - 'frontend'
+      - 'web'
+      - 'layout'
+    labels:
+      - Web
+  - location: title
+    keywords:
+      - 'BREAKING CHANGE'
+      - 'big'
+      - 'huge'
+    labels:
+      - '[Global]'
+  - location: title
+    keywords:
+      - 'shared'
+    labels:
+      - Shared
+  - location: title
+    keywords:
+      - 'docs'
+    labels:
+      - documentation
+  - location: title
+    keywords:
+      - 'deps'
+      - 'dependencies'
+    labels:
+      - dependencies
+  - location: title
+    keywords:
+      - 'question'
+      - '?'
+    labels:
+      - question
