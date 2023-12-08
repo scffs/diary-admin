@@ -3,15 +3,18 @@ on:
   pull_request:
     types:
       - labeled
+  workflow_run:
+    workflows: [Build API, Build Web, Linting, Build Shared, Auto request changes]
+    types:
+      - completed
 
 jobs:
-  auto-approve:
+  build:
     runs-on: ubuntu-latest
     permissions:
       pull-requests: write
-    if: github.actor == 'scffs' && contains(github.event.label.name, '[Merge] Ready')
     steps:
       - uses: hmarr/auto-approve-action@v3
         with:
           github-token: ${{ secrets.TOKEN }}
-          review-message: "Auto approved automated PR"
+          REVIEW_MESSAGE: "Auto approved automated PR"
