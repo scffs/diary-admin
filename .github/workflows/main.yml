@@ -1,0 +1,22 @@
+name: Main Workflow
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  build-all:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Build API
+        uses: ../../apps/api/.github/workflows/build-api.yml
+
+      - name: Build Web
+        uses: ../../apps/web/.github/workflows/build-web.yml
