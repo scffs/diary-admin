@@ -12,70 +12,70 @@ import { useCallback, useState } from 'preact/hooks'
  */
 
 export interface SnackbarData {
-	layout?: SnackbarProps['layout']
-	icon?: ReactNode
-	action?: string
-	onActionClick?: () => void
-	onClose?: () => void
-	duration?: number
-	style?: CSSProperties
-	title: string
-	subtitle?: string
+  layout?: SnackbarProps['layout']
+  icon?: ReactNode
+  action?: string
+  onActionClick?: () => void
+  onClose?: () => void
+  duration?: number
+  style?: CSSProperties
+  title: string
+  subtitle?: string
 }
 
 const useSnackbar = (): [
-	ReactNode | null,
-	(snackbarData: SnackbarData | null) => void
+  ReactNode | null,
+  (snackbarData: SnackbarData | null) => void
 ] => {
-	const [snackbar, setSnackbar] = useState<ReactNode | null>(null)
+  const [snackbar, setSnackbar] = useState<ReactNode | null>(null)
 
-	const showSnackbar = useCallback((snackbarData: SnackbarData | null) => {
-		if (!snackbarData) {
-			setSnackbar(null)
-			return null
-		}
+  const showSnackbar = useCallback((snackbarData: SnackbarData | null) => {
+    if (!snackbarData) {
+      setSnackbar(null)
+      return null
+    }
 
-		const {
-			layout,
-			action,
-			onActionClick,
-			duration,
-			onClose,
-			subtitle,
-			style,
-			title,
-			icon
-		} = snackbarData
+    const {
+      layout,
+      action,
+      onActionClick,
+      duration,
+      onClose,
+      subtitle,
+      style,
+      title,
+      icon
+    } = snackbarData
 
-		setSnackbar(
-			<Snackbar
-				layout={layout || 'vertical'}
-				onClose={() => {
-					setSnackbar(null)
+    setSnackbar(
+      <Snackbar
+        layout={layout || 'vertical'}
+        onClose={() => {
+          setSnackbar(null)
 
-					if (onClose) {
-						onClose()
-					}
-				}}
-				before={
-					icon || (
-						<Icon28InfoCircleOutline fill='var(--vkui--color_background_accent)' />
-					)
-				}
-				action={action}
-				onActionClick={onActionClick}
-				duration={duration}
-				style={style}
-				subtitle={subtitle}
-			>
-				{title}
-			</Snackbar>
-		)
+          if (onClose) {
+            onClose()
+          }
+        }}
+        before={
+          icon || (
+            <Icon28InfoCircleOutline fill='var(--vkui--color_background_accent)' />
+          )
+        }
+        action={action}
+        onActionClick={onActionClick}
+        duration={duration}
+        style={style}
+        subtitle={subtitle}
+      >
+        {title}
+      </Snackbar>
+    )
 
-		return null
-	}, [])
+    return null
+  }, [])
 
-	return [snackbar, showSnackbar]
+  return [snackbar, showSnackbar]
 }
 
 export default useSnackbar
