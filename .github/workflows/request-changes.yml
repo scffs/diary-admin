@@ -1,0 +1,11 @@
+name: Auto request changes
+on: pull_request_target
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: ntsd/auto-request-changes-action@v2
+        if: ${{ github.event.pull_request && failure() }}
+        with:
+          comment-body: "The job ran failed please fix it."
