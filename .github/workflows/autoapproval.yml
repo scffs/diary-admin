@@ -1,23 +1,10 @@
 name: Auto approve
-
-on:
-  push:
-    branches:
-      - '*'
+on: pull_request
 
 jobs:
-  auto-approve:
+  build:
     runs-on: ubuntu-latest
     permissions:
       pull-requests: write
-    if: github.actor == 'scffs'
     steps:
-      - name: Get Pull Request Number
-        id: pr
-        run: echo "::set-output name=number::${{ github.event.number }}"
-      
-      - name: Run hmarr/auto-approve-action
-        uses: hmarr/auto-approve-action@v3
-        with:
-          pull-request-number: ${{ steps.pr.outputs.number }}
-          review-message: "Auto approved automated PR"
+      - uses: hmarr/auto-approve-action@v3
