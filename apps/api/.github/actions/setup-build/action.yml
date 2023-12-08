@@ -9,17 +9,21 @@ runs:
       with:
         bun-version: 1.0.11 # or "latest", "canary", <sha>
 
+    - name: Set working directory
+      shell: bash
+      run: cd apps/api
+
     - name: Install dependencies
       shell: bash
       run: bun i
-      working-directory: ./apps/api
+#      working-directory: ./apps/api
 
     - name: API build
       shell: bash
       run: bun run build
-      working-directory: ./apps/api
+#      working-directory: ./apps/api
 
     - name: API build types
       shell: bash
       run: bun run build:types
-      working-directory: ./apps/api
+#      working-directory: ./apps/api
