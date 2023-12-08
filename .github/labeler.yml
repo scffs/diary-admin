@@ -1,0 +1,22 @@
+numLabels: 40
+excludeLabels:
+  - pinned
+custom:
+  - location: title
+    keywords:
+      - 'chore'
+      - 'little'
+    labels:
+      - [Common]
+      
+  - location: body
+    keywords:
+      - 'hey'
+    labels:
+      - feature:new
+      - hey
+  - location: body
+    keywords:
+      - 'hi'
+    labels:
+      - h
