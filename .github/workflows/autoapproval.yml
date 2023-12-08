@@ -1,22 +1,14 @@
-on:
-  pull_request:
-    types: [opened, reopened, labeled, edited]
-  pull_request_review:
-    types: [dismissed]
-    required_labels:
-      - '[Merge] Ready'
-    blacklisted_labels:
-      - wip
-    
-permissions:
-  contents: read
-  pull-requests: write
-  
+name: Auto approve
+
+on: pull_request_target
+
 jobs:
-  autoapproval:
+  auto-approve:
     runs-on: ubuntu-latest
-    name: Autoapproval
+    permissions:
+      pull-requests: write
+    if: github.actor == 'scffs'
     steps:
-      - uses: dkhmelenko/autoapproval@v1.0
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - uses: hmarr/auto-approve-action@v3
+        with:
+          review-message: "Auto approved automated PR"
