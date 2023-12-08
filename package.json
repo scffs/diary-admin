@@ -5,7 +5,7 @@
   "description": "",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "prepare": "husky install && bun format",
+    "prepare": "husky install && bun checkAll",
     "dev:api": "cd apps/api && bun dev",
     "dev:startDB": "cd apps/api && db:start",
     "lint": "biome lint . --apply",
