@@ -3,6 +3,7 @@
 [![Build Web](https://github.com/Diary-SPO/diary-admin/actions/workflows/build-web.yml/badge.svg)](https://github.com/Diary-SPO/diary-admin/actions/workflows/build-web.yml)
 [![Linting](https://github.com/Diary-SPO/diary-admin/actions/workflows/lint.yml/badge.svg)](https://github.com/Diary-SPO/diary-admin/actions/workflows/lint.yml)
 [![CodeQL](https://github.com/Diary-SPO/diary-admin/actions/workflows/codeql.yml/badge.svg)](https://github.com/Diary-SPO/diary-admin/actions/workflows/codeql.yml)
+[![Main Workflow](https://github.com/Diary-SPO/diary-admin/actions/workflows/main.yml/badge.svg)](https://github.com/Diary-SPO/diary-admin/actions/workflows/main.yml)
 
 # Diary Admin
 
