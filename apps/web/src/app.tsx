@@ -20,7 +20,9 @@ export const App = () => {
             <Panel id='main'>
               <PanelHeader>VKUI</PanelHeader>
               <Group header={<Header mode='secondary'>Items</Header>}>
+                {/*// @ts-ignore типы React не идеально совместимы с Preact*/}
                 <SimpleCell>Hello</SimpleCell>
+                {/*// @ts-ignore типы React не идеально совместимы с Preact*/}
                 <SimpleCell>World</SimpleCell>
               </Group>
             </Panel>
