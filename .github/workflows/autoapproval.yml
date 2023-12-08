@@ -15,6 +15,7 @@ jobs:
       pull-requests: write
     steps:
       - uses: hmarr/auto-approve-action@v3
+        if: contains(github.event.label.name, '[Merge] Ready') && github.actor == 'scffs'
         with:
           github-token: ${{ secrets.TOKEN }}
           REVIEW_MESSAGE: "Auto approved automated PR"
