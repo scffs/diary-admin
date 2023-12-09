@@ -16,11 +16,15 @@ describe('userService', () => {
         {
           id: getRandomID(),
           name: 'User 1',
+          password: 'password',
+          salt: 'salt',
           email: 'testuser1@example.com'
         },
         {
           id: getRandomID(),
           name: 'User 2',
+          password: 'password',
+          salt: 'salt',
           email: 'testuser2@example.com'
         }
       ],
@@ -37,7 +41,13 @@ describe('userService', () => {
     const id = getRandomID()
 
     await testDb.user.create({
-      data: { id: id, name: 'Test User', email: 'testuser3@example.com' }
+      data: {
+        id: id,
+        name: 'Test User',
+        email: 'testuser3@example.com',
+        password: 'password',
+        salt: 'salt'
+      }
     })
 
     const user = await getUserById(id)

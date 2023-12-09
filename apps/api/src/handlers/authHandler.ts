@@ -9,7 +9,9 @@ interface Body {
 
 export const postAuth = async ({
   body,
+  // @ts-ignore
   jwt,
+  // @ts-ignore
   setCookie,
   cookie
 }: ContextWith<never, Body>): Promise<ApiResponse<string>> => {
