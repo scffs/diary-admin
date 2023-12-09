@@ -1,7 +1,7 @@
 import { afterAll, describe, expect, it } from 'bun:test'
 import { PrismaClient } from '@prisma/client'
-import { getAllUsers, getUserById } from '../../src/services/userService'
-import { getRandomID } from '../../src/utils'
+import { getAllUsers, getUserById } from '@services'
+import { getRandomID } from '@utils'
 
 const testDb = new PrismaClient()
 

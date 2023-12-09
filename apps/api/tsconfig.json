@@ -6,9 +6,10 @@
     "types": ["bun-types"],
     "paths": {
       "@utils": ["src/utils"],
-      "@handlers": ["src/handlers"]
+      "@handlers": ["src/handlers"],
+      "@services": ["src/services"]
     }
   },
   "extends": "../../tsconfig.base.json",
-  "include": ["src"]
+  "include": ["src", "__tests__"]
 }

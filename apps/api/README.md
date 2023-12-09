@@ -45,3 +45,17 @@ bun run migrate
 ![img_2.png](images/img_2.png)
 
 #### API доступен по урлу http://localhost:3000/
+
+# Возможные ошибки
+
+- Ругается на `@prisma/client`
+
+Необходимо в `apps/api` запустить команду
+```bash
+cd apps/api
+npx prisma generate
+```
+or
+```bash
+npx prisma generate
+```
