@@ -7,14 +7,14 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "prepare": "husky install && bun format",
     "dev:api": "cd apps/api && bun dev",
-    "dev:startDB": "cd apps/api && db:start",
+    "dev:web": "cd apps/web && bun dev",
+    "dev:startDB": "cd apps/api && bun db:start",
     "lint": "biome lint . --apply",
     "format": "biome format . --write",
     "checkAll": "biome check . --apply",
     "build:web": "cd apps/web && bun run build",
     "build:api": "cd apps/api && bun run build",
-    "build:api:types": "cd apps/api && bun run build:types",
-    "build:shared": "cd apps/shared && bun run build"
+    "build:api:types": "cd apps/api && bun run build:types"
   },
   "workspaces": [
     "apps/*"

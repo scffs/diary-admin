@@ -44,5 +44,4 @@ describe('userService', () => {
     expect(user).not.toBeNull()
     expect(user?.name).toBe('Test User')
   })
-
 })
