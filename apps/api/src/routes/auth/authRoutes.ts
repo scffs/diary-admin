@@ -6,24 +6,12 @@ import { authBody } from './authSchema'
 
 const authConfig: JWTOption<string> = {
   name: 'jwt',
-  secret: Bun.env.JWT_SECRET ?? 'secret'
+  secret: Bun.env.JWT_SECRET ?? 'secret',
+  exp: '7d'
 }
 
 const app = new Elysia().use(jwt(authConfig)).post('/auth', postAuth, {
-  body: t.Object(authBody),
-  // TODO: move to custom plugin (middleware)
-  beforeHandle: async (context) => {
-    const user = await getUserById(context.body.id)
-
-    if (
-      !user ||
-      user.id !== context.body.id ||
-      user.email !== context.body.login
-    ) {
-      context.set.status = 400
-      return 'Bad request'
-    }
-  }
+  body: t.Object(authBody)
 })
 
 export default app

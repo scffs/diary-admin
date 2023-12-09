@@ -9,10 +9,7 @@ interface Body {
 
 export const postAuth = async ({
   body,
-  // @ts-ignore
   jwt,
-  // @ts-ignore
-  setCookie,
   cookie
 }: ContextWith<never, Body>): Promise<ApiResponse<string>> => {
   if (typeof body === 'undefined') {
@@ -26,11 +23,14 @@ export const postAuth = async ({
 
   const { success } = await authenticateUser(id, login, password)
 
-  setCookie('auth', await jwt.sign(body), {
-    httpOnly: true,
-    maxAge: 7 * 86400,
-    secure: true
-  })
+  if (!jwt) {
+    return {
+      success: false,
+      data: 'Fatal error'
+    }
+  }
+
+  await jwt.sign(body)
 
   const verify = await jwt.verify(cookie.auth)
 
