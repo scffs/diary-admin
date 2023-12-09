@@ -1,4 +1,4 @@
-import { PrismaClient } from 'prisma/prisma-client/scripts/default-index'
+import { PrismaClient } from '@prisma/client'
 import { User } from 'shared'
 
 const db = new PrismaClient()

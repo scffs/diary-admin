@@ -2,6 +2,7 @@
 .idea
 **/.env
 .env
-apps/api/.env
-apps/shared/.env
-apps/web/.env
+
+**/.env
+
+**/dist

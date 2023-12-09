@@ -25,6 +25,7 @@ jobs:
         run: |
           cd apps/api
           bun i
+          npx prisma generate
 
       - name: API build
         run: bun run build:api
