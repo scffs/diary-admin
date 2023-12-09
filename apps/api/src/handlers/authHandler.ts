@@ -1,5 +1,5 @@
-import { ApiResponse, ContextWith } from '../types'
 import { authenticateUser } from '@services'
+import { ApiResponse, ContextWith } from '../types'
 
 interface Body {
   password: string
@@ -31,12 +31,12 @@ export const postAuth = async ({
   })
 
   const verify = await jwt.verify(cookie.auth)
-  
+
   console.debug('verify', verify)
   console.debug('cookie.auth', cookie.auth)
   console.debug('success', success)
 
   return {
-    success,
+    success
   }
 }
