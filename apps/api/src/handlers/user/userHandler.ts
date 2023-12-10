@@ -1,6 +1,6 @@
 import { getAllUsers, getUserById } from '@services'
+import { ApiResponse, ContextWith } from '@types'
 import { User } from 'shared'
-import { ApiResponse, ContextWith } from '../types'
 
 type Params = { id: string }
 

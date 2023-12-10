@@ -1,6 +1,6 @@
 import { PrismaClient } from '@prisma/client'
+import { ApiResponse } from '@types'
 import { comparePassword } from '@utils'
-import { ApiResponse } from '../types'
 
 const prisma = new PrismaClient()
 

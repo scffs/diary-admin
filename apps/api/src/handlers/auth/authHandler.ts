@@ -1,5 +1,5 @@
 import { authenticateUser } from '@services'
-import { ApiResponse, ContextWith } from '../types'
+import { ApiResponse, ContextWith } from '@types'
 
 interface Body {
   password: string
@@ -10,6 +10,7 @@ interface Body {
 export const postAuth = async ({
   body,
   jwt,
+  set,
   cookie
 }: ContextWith<never, Body>): Promise<ApiResponse<string>> => {
   if (typeof body === 'undefined') {
@@ -23,10 +24,12 @@ export const postAuth = async ({
 
   const { success } = await authenticateUser(id, login, password)
 
-  if (!jwt) {
+  if (!success || !jwt) {
+    set.status = 'Bad Request'
+
     return {
       success: false,
-      data: 'Fatal error'
+      data: 'Bad request'
     }
   }
 

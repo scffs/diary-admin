@@ -1,6 +1,5 @@
 import jwt, { JWTOption } from '@elysiajs/jwt'
 import { postAuth } from '@handlers'
-import { getUserById } from '@services'
 import Elysia, { t } from 'elysia'
 import { authBody } from './authSchema'
 
