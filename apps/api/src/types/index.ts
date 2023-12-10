@@ -30,7 +30,3 @@ export interface ContextWith<T, U>
     verify: (payload: unknown) => Promise<JWTPayloadSpec | false>
   }
 }
-
-
-
-
