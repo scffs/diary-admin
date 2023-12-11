@@ -1,4 +1,4 @@
-import { Context } from 'elysia'
+import { ContextWith } from '@types'
 
 /**
  * Посредник для проверки авторизирован ли юзер
@@ -12,7 +12,12 @@ import { Context } from 'elysia'
  * P.S. Пока используем второй способ.
  */
 
-const auth = async ({ set, jwt, cookie }: Context) => {
+const auth = async ({ set, jwt, cookie }: ContextWith<unknown, unknown>) => {
+  if (!jwt) {
+    set.status = 'Internal Server Error'
+    return
+  }
+  
   const isOK = await jwt.verify(cookie.auth)
 
   if (!isOK) {

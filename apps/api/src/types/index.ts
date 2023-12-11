@@ -14,10 +14,10 @@ export interface ApiResponse<T> {
  * Расширяет контекст Elysia с сильно-типизированным объектом `params`
  * Extends the Elysia context with a strongly-typed `params` object
  */
-export interface ContextWith<T, U>
+export interface ContextWith<T = {}, U = {}>
   extends Omit<ElysiaContext, 'params' | 'body'> {
   params: T
-  body?: U
+  body: U
   /**
    * @warning Необходимо для типизации методов jwt в хендлерах, т.к. Элизия их не передает
    * @warning Necessary for typing jwt methods in handlers since Elysia doesn't pass them
