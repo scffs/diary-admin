@@ -8,7 +8,8 @@
       "@utils": ["src/utils"],
       "@types": ["src/types"],
       "@handlers": ["src/handlers"],
-      "@services": ["src/services"]
+      "@services": ["src/services"],
+      "@config": ["src/config"]
     }
   },
   "extends": "../../tsconfig.base.json",
