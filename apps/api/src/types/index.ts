@@ -14,7 +14,7 @@ export interface ApiResponse<T> {
  * Расширяет контекст Elysia с сильно-типизированным объектом `params`
  * Extends the Elysia context with a strongly-typed `params` object
  */
-export interface ContextWith<T = {}, U = {}>
+export interface ContextWith<T = unknown, U = unknown>
   extends Omit<ElysiaContext, 'params' | 'body'> {
   params: T
   body: U
