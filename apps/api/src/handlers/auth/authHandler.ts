@@ -11,7 +11,6 @@ export const postAuth = async ({
   body,
   jwt,
   set,
-  cookie
 }: ContextWith<never, Body>): Promise<ApiResponse<string>> => {
   if (typeof body === 'undefined') {
     return {
@@ -33,13 +32,17 @@ export const postAuth = async ({
     }
   }
 
+  /**
+   * jwt.sign() будет возвращать одну и ту же куку в течении даты ее жизни
+   *
+   * Если хочется генерировать новую на каждую авторизацию (например), то можно использовать такой код
+   *
+   * setCookie('auth', await jwt.sign(body), {
+   *   httpOnly: true,
+   *   maxAge: 7 * 86400,
+   * })
+   */
   await jwt.sign(body)
-
-  const verify = await jwt.verify(cookie.auth)
-
-  console.debug('verify', verify)
-  console.debug('cookie.auth', cookie.auth)
-  console.debug('success', success)
 
   return {
     success
