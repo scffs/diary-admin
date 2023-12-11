@@ -10,7 +10,7 @@ interface Body {
 export const postAuth = async ({
   body,
   jwt,
-  set,
+  set
 }: ContextWith<never, Body>): Promise<ApiResponse<string>> => {
   if (typeof body === 'undefined') {
     return {
@@ -41,6 +41,8 @@ export const postAuth = async ({
    *   httpOnly: true,
    *   maxAge: 7 * 86400,
    * })
+   *
+   * @see https://elysiajs.com/plugins/jwt.html#jwt-plugin
    */
   await jwt.sign(body)
 

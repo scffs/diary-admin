@@ -4,10 +4,10 @@ import { userByIdParams } from './userSchema'
 import auth from '../../middlewares/auth'
 
 const app = new Elysia()
+  .onBeforeHandle(auth)
   .get('/user', getAllUsersHandler)
   .get('/user/:id', getUserByIdHandler, {
     params: t.Object(userByIdParams)
   })
-  .onBeforeHandle(auth)
 
 export default app
