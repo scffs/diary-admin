@@ -1,2 +1,6 @@
 export * from './handleErrors'
 export * from './getRandomNumber'
+export * from './auth/pbkdf2Hash'
+export * from './auth/hashPassword'
+export * from './auth/comparePassword'
+export * from './getTestUser'

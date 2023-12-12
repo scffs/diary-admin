@@ -6,8 +6,11 @@
     "types": ["bun-types"],
     "paths": {
       "@utils": ["src/utils"],
+      "@types": ["src/types"],
       "@handlers": ["src/handlers"],
-      "@services": ["src/services"]
+      "@services": ["src/services"],
+      "@config": ["src/config"],
+      "@middlewares": ["src/middlewares"]
     }
   },
   "extends": "../../tsconfig.base.json",
