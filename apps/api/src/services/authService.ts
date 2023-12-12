@@ -1,43 +1,24 @@
-import { PrismaClient } from '@prisma/client'
-import { ApiResponse } from '@types'
 import { comparePassword } from '@utils'
+import { User } from 'shared'
 
-const prisma = new PrismaClient()
-
+/**
+ * authenticateUser проверяет правильность переданных значений и тех, которые хранятся в БД.
+ * @param user модель юзера из БД
+ * @param login переданный логин (email) юзером
+ * @param password переданный пароль (email) юзером (не зашифрованный)
+ */
 export const authenticateUser = async (
-  id: number,
-  login: string,
-  password: string
-): Promise<ApiResponse<string>> => {
-  const user = await prisma.user.findUnique({
-    where: {
-      email: login,
-      id
-    }
-  })
+	user: User,
+	login: string,
+	password: string
+): Promise<boolean> => {
+	const isValidPassword = await comparePassword(
+		password,
+		user.salt,
+		user.password
+	)
 
-  // FIXME: мб удалить, т.к. на уровне мидлвара мы будем уверены в существовании юзера
-  if (!user) {
-    return {
-      success: false
-    }
-  }
+	const isValidLogin = login === user.email
 
-  const isValidPassword = await comparePassword(
-    password,
-    user.salt,
-    user.password
-  )
-
-  if (!isValidPassword) {
-    return {
-      success: false,
-      data: 'Invalid password'
-    }
-  }
-
-  return {
-    success: true,
-    data: 'Password'
-  }
+	return isValidPassword && isValidLogin
 }
