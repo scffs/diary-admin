@@ -12,17 +12,16 @@ import { ContextWith } from '@types'
  * P.S. Пока используем второй способ.
  */
 
-const auth = async ({ set, jwt, cookie }: ContextWith<unknown, unknown>) => {
-  if (!jwt) {
-    set.status = 'Internal Server Error'
-    return
-  }
-  
-  const isOK = await jwt.verify(cookie.auth)
+export const auth = async ({ set, jwt, cookie }: ContextWith) => {
+	if (!jwt || !cookie.auth) {
+		set.status = 'Internal Server Error'
+		return
+	}
 
-  if (!isOK) {
-    set.status = 'Unauthorized'
-  }
+	const isCookieValid = await jwt.verify(cookie.auth)
+
+	if (!isCookieValid) {
+		set.status = 'Unauthorized'
+		return
+	}
 }
-
-export default auth

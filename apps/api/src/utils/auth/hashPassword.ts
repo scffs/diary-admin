@@ -9,14 +9,14 @@ import { pbkdf2Hash } from './pbkdf2Hash'
  * @returns Промис, который ресолвится объектом с хешем и солью.
  */
 export const hashPassword = async (
-  password: string,
-  testSalt?: string
+	password: string,
+	testSalt?: string
 ): Promise<{ hash: string; salt: string }> => {
-  if (testSalt && POSTGRES_PASSWORD !== '12345678') {
-    throw new Error('The testSalt parameter can only be used in testing.')
-  }
+	if (testSalt && POSTGRES_PASSWORD !== '12345678') {
+		throw new Error('The testSalt parameter can only be used in testing.')
+	}
 
-  const salt = randomBytes(16).toString('hex')
-  const hash = await pbkdf2Hash(password, testSalt ? testSalt : salt)
-  return { hash, salt }
+	const salt = randomBytes(16).toString('hex')
+	const hash = await pbkdf2Hash(password, testSalt ? testSalt : salt)
+	return { hash, salt }
 }

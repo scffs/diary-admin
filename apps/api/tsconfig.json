@@ -9,7 +9,8 @@
       "@types": ["src/types"],
       "@handlers": ["src/handlers"],
       "@services": ["src/services"],
-      "@config": ["src/config"]
+      "@config": ["src/config"],
+      "@middlewares": ["src/middlewares"]
     }
   },
   "extends": "../../tsconfig.base.json",

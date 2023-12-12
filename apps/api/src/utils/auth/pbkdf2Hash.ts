@@ -7,16 +7,16 @@ import { pbkdf2 } from 'crypto'
  * @returns Промис, который разрешается строкой с хешем.
  */
 export const pbkdf2Hash = async (
-  password: string,
-  salt: string
+	password: string,
+	salt: string
 ): Promise<string> => {
-  return new Promise((resolve, reject) => {
-    pbkdf2(password, salt, 1000, 64, 'sha512', (error, derivedKey) => {
-      if (error) {
-        return reject(error)
-      }
+	return new Promise((resolve, reject) => {
+		pbkdf2(password, salt, 1000, 64, 'sha512', (error, derivedKey) => {
+			if (error) {
+				return reject(error)
+			}
 
-      return resolve(derivedKey.toString('hex'))
-    })
-  })
+			return resolve(derivedKey.toString('hex'))
+		})
+	})
 }
