@@ -8,17 +8,17 @@ import { User } from 'shared'
  * @param password переданный пароль (email) юзером (не зашифрованный)
  */
 export const authenticateUser = async (
-	user: User,
-	login: string,
-	password: string
+  user: User,
+  login: string,
+  password: string
 ): Promise<boolean> => {
-	const isValidPassword = await comparePassword(
-		password,
-		user.salt,
-		user.password
-	)
+  const isValidPassword = await comparePassword(
+    password,
+    user.salt,
+    user.password
+  )
 
-	const isValidLogin = login === user.email
+  const isValidLogin = login === user.email
 
-	return isValidPassword && isValidLogin
+  return isValidPassword && isValidLogin
 }

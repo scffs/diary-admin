@@ -6,8 +6,8 @@ import { Context as ElysiaContext } from 'elysia'
  * Standardizes the API response: a `success` flag and data with custom type T
  */
 export interface ApiResponse<T> {
-	success: boolean
-	data?: T
+  success: boolean
+  data?: T
 }
 
 /**
@@ -15,18 +15,18 @@ export interface ApiResponse<T> {
  * Extends the Elysia context with a strongly-typed `params` object
  */
 export interface ContextWith<T = unknown, U = unknown>
-	extends Omit<ElysiaContext, 'params' | 'body'> {
-	params: T
-	body: U
-	/**
-	 * @warning Необходимо для типизации методов jwt в хендлерах, т.к. Элизия их не передает
-	 * @warning Necessary for typing jwt methods in handlers since Elysia doesn't pass them
-	 *
-	 * @see https://elysiajs.com/plugins/jwt.html#jwt-sign
-	 * @see https://elysiajs.com/plugins/jwt.html#jwt-verify
-	 */
-	jwt?: {
-		sign: (payload: unknown) => Promise<string>
-		verify: (payload: unknown) => Promise<JWTPayloadSpec | false>
-	}
+  extends Omit<ElysiaContext, 'params' | 'body'> {
+  params: T
+  body: U
+  /**
+   * @warning Необходимо для типизации методов jwt в хендлерах, т.к. Элизия их не передает
+   * @warning Necessary for typing jwt methods in handlers since Elysia doesn't pass them
+   *
+   * @see https://elysiajs.com/plugins/jwt.html#jwt-sign
+   * @see https://elysiajs.com/plugins/jwt.html#jwt-verify
+   */
+  jwt?: {
+    sign: (payload: unknown) => Promise<string>
+    verify: (payload: unknown) => Promise<JWTPayloadSpec | false>
+  }
 }

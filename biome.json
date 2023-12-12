@@ -3,11 +3,7 @@
   "formatter": {
     "indentStyle": "space",
     "indentWidth": 2,
-    "ignore": [
-      "./apps/api/dist",
-      "./apps/web/dist",
-      "node_modules"
-    ]
+    "ignore": ["./apps/api/dist", "./apps/web/dist", "node_modules"]
   },
   "javascript": {
     "formatter": {

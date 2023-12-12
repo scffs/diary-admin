@@ -8,10 +8,10 @@ import { pbkdf2Hash } from './pbkdf2Hash'
  * @returns Промис, который резолвится булевым значением, указывающим соответствие пароля хешу.
  */
 export const comparePassword = async (
-	password: string,
-	salt: string,
-	hash: string
+  password: string,
+  salt: string,
+  hash: string
 ): Promise<boolean> => {
-	const derivedKey = await pbkdf2Hash(password, salt)
-	return hash === derivedKey
+  const derivedKey = await pbkdf2Hash(password, salt)
+  return hash === derivedKey
 }

@@ -6,5 +6,5 @@ import users from './routes/user/userRoutes'
 const app = new Elysia().use(users).use(auth).listen(3000).onError(handleErrors)
 
 console.log(
-	`🦊 Elysia is running at http://${app.server?.hostname}:${app.server?.port}`
+  `🦊 Elysia is running at http://${app.server?.hostname}:${app.server?.port}`
 )
